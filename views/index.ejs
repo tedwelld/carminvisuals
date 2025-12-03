@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carmine Visuals — Media & IT Solutions</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🎨 Carmine Visuals</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/contact">Contact</a>
+        <% if (!currentUser) { %>
+          <a href="/login">🔓 Login</a>
+          <a href="/register">📝 Register</a>
+        <% } else { %>
+          <a href="/dashboard">👤 Dashboard</a>
+          <% if (currentUser.is_superuser) { %>
+            <a href="/admin">⚙️ Admin</a>
+          <% } %>
+          <a href="/logout">🚪 Logout</a>
+        <% } %>
+      </nav>
+    </header>
+    <main>
+      <div class="hero">
+        <h2>Premium Media & IT Solutions</h2>
+        <p>Professional video production, photography, web development, and IT services to elevate your brand.</p>
+      </div>
+      <section>
+        <h2>Welcome to Carmine Visuals</h2>
+        <p>We deliver cutting-edge creative and technical solutions tailored to your business needs. Explore our services and portfolio to see what we can do for you.</p>
+      </section>
+      <section>
+        <h2>What we offer</h2>
+        <div class="services-grid">
+          <div class="service-card"><h3>Video Production</h3><p>From concept to final edit — commercials, corporate, and social content.</p></div>
+          <div class="service-card"><h3>Photography</h3><p>Product, portrait, and event photography with professional retouching.</p></div>
+          <div class="service-card"><h3>Web & Apps</h3><p>Fast, secure websites and apps with great UX and modern tooling.</p></div>
+          <div class="service-card"><h3>IT Services</h3><p>Managed IT, infrastructure, and cybersecurity tailored for small businesses.</p></div>
+        </div>
+      </section>
+      <section>
+        <h2>Latest News</h2>
+        <p>Read our latest announcements and posts.</p>
+        <p><a href="/news" style="color:#1e90ff">View news & announcements →</a></p>
+      </section>
+    </main>
+    <footer>
+      &copy; 2025 Carmine Visuals. All rights reserved.
+    </footer>
+    <script src="/public/theme-switcher.js"></script>
+  </body>
+</html>

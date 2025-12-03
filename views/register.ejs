@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register — Carmine Visuals</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🎨 Carmine Visuals</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/contact">Contact</a>
+        <a href="/login">🔓 Login</a>
+      </nav>
+    </header>
+    <main>
+      <div class="login">
+        <form method="POST" action="/register">
+          <h2>📝 Create Account</h2>
+            <% if (error) { %>
+              <div class="error"><%= error %></div>
+            <% } %>
+            <% if (message) { %>
+              <div class="success"><%= message %></div>
+            <% } %>
+            <div class="form-grid">
+              <div>
+                <label>First Name<br/><input name="first_name" required placeholder="First name"/></label>
+              </div>
+              <div>
+                <label>Last Name<br/><input name="last_name" required placeholder="Last name"/></label>
+              </div>
+              <div>
+                <label>Age<br/><input name="age" type="number" min="13" placeholder="Age"/></label>
+              </div>
+              <div>
+                <label>Phone<br/><input name="phone" placeholder="Phone number"/></label>
+              </div>
+              <div class="full">
+                <label>Email<br/><input name="email" type="email" required placeholder="you@example.com"/></label>
+              </div>
+              <div>
+                <label>Username<br/><input name="username" required placeholder="choose_username"/></label>
+              </div>
+              <div>
+                <label>Password<br/><input name="password" type="password" required placeholder="••••••••"/></label>
+              </div>
+            </div>
+            <div style="display:flex; gap:12px; align-items:center; margin-top:6px">
+              <button type="submit">📝 Register</button>
+              <p style="margin:0">Already have an account? <a href="/login" style="color: #8b1e3f">Login here</a></p>
+            </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      &copy; 2025 Carmine Visuals. All rights reserved.
+    </footer>
+  </body>
+</html>

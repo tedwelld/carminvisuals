@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — Carmine Visuals</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🎨 Carmine Visuals</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/contact">Contact</a>
+        <% if (currentUser.is_superuser) { %>
+          <a href="/admin">⚙️ Admin</a>
+        <% } %>
+        <a href="/logout">🚪 Logout</a>
+      </nav>
+    </header>
+    <main>
+      <div class="hero">
+        <h2>👋 Welcome, <%= currentUser.username %>!</h2>
+        <p>You are now logged in to Carmine Visuals.</p>
+      </div>
+      <section>
+        <h3>📊 Your Dashboard</h3>
+        <p>You have access to all our services and portfolio galleries. Explore and enjoy!</p>
+        <% if (currentUser.is_superuser) { %>
+          <p><strong>⚙️ You are an admin.</strong> <a href="/admin" style="color: #8b1e3f">Manage users →</a></p>
+        <% } %>
+      </section>
+    </main>
+    <footer>
+      &copy; 2026 Carmine Visuals. All rights reserved.
+    </footer>
+  </body>
+</html>

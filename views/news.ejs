@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News — Carmine Visuals</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🎨 Carmine Visuals</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/contact">Contact</a>
+        <a href="/news">News</a>
+      </nav>
+    </header>
+    <main>
+      <h1>📰 Latest News</h1>
+      <div class="services-grid">
+        <% posts.forEach(p => { %>
+          <div class="service-card">
+            <h3><a href="/news/<%= p.id %>" style="color:#8b1e3f"><%= p.title %></a></h3>
+            <p><%= p.summary %></p>
+            <small><%= p.created_at %></small>
+          </div>
+        <% }) %>
+      </div>
+    </main>
+    <footer>
+      &copy; 2025 Carmine Visuals. All rights reserved.
+    </footer>
+  </body>
+</html>

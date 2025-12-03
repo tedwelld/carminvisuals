@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Console — Carmine Visuals</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🎨 Carmine Visuals</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/dashboard">👤 Dashboard</a>
+        <a href="/logout">🚪 Logout</a>
+      </nav>
+    </header>
+    <main>
+      <h1>⚙️ Admin Console</h1>
+      <h2>👥 Manage Users</h2>
+      <p>Promote or revoke superuser privileges for user accounts.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Superuser</th>
+            <th>Created</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% users.forEach(u => { %>
+          <tr>
+            <td><%= u.id %></td>
+            <td><%= u.username %></td>
+            <td><%= u.is_superuser ? '✅ Yes' : '❌ No' %></td>
+            <td><%= new Date(u.created_at).toLocaleDateString() %></td>
+            <td>
+              <form method="POST" action="/admin/toggle-super/<%= u.id %>" style="display:inline">
+                <button type="submit"><%= u.is_superuser ? '👤 Revoke' : '⭐ Promote' %></button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+        </tbody>
+      </table>
+    </main>
+    <footer>
+      &copy; 2026 Carmine Visuals. All rights reserved.
+    </footer>
+  </body>
+</html>

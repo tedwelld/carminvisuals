@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us — Carmine Visuals</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🎨 Carmine Visuals</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/contact">Contact</a>
+        <% if (!currentUser) { %>
+          <a href="/login">🔓 Login</a>
+          <a href="/register">📝 Register</a>
+        <% } else { %>
+          <a href="/dashboard">👤 Dashboard</a>
+          <% if (currentUser.is_superuser) { %>
+            <a href="/admin">⚙️ Admin</a>
+          <% } %>
+          <a href="/logout">🚪 Logout</a>
+        <% } %>
+      </nav>
+    </header>
+    <main>
+      <h1>📞 Get in Touch</h1>
+      <div class="contact-form">
+        <% if (success) { %>
+          <div class="success">✅ Your message was sent successfully! We'll get back to you soon.</div>
+        <% } %>
+        <% if (error) { %>
+          <div class="error">❌ <%= error %></div>
+        <% } %>
+        <form method="POST" action="/contact">
+          <label>Name *<br/><input name="name" required/></label>
+          <label>Email *<br/><input name="email" type="email" required/></label>
+          <label>Service Type<br/>
+            <select name="service">
+              <option value="">-- Select a service --</option>
+              <option value="video">📹 Video Production</option>
+              <option value="photography">📷 Photography</option>
+              <option value="web">🌐 Web Development</option>
+              <option value="it">💻 IT Consulting</option>
+              <option value="design">🎨 Design & Animation</option>
+              <option value="mobile">📱 Mobile Apps</option>
+            </select>
+          </label>
+          <label>Message *<br/><textarea name="message" rows="6" required></textarea></label>
+          <button type="submit">📤 Send Message</button>
+        </form>
+      </div>
+    </main>
+    <footer>
+      &copy; 2025 Carmine Visuals. All rights reserved.
+    </footer>
+  </body>
+</html>
