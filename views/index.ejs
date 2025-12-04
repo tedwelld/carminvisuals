@@ -14,17 +14,7 @@
         <a href="/services">Services</a>
         <a href="/gallery">Gallery</a>
         <a href="/contact">Contact</a>
-        <% if (!currentUser) { %>
-          <a href="/login">🔓 Login</a>
-          <a href="/register">📝 Register</a>
-        <% } else { %>
-          <a href="/dashboard">👤 Dashboard</a>
-          <% if (currentUser.is_superuser) { %>
-            <a href="/admin">⚙️ Admin</a>
-          <% } %>
-          <a href="/logout">🚪 Logout</a>
-        <% } %>
-      </nav>
+        <a href="/news">News</a>         
  <main>
       <section>
         <h2>Welcome to Carmine Visuals</h2>
@@ -37,16 +27,12 @@
       <div class="hero">
         <h2><b>Mission</b></h2>
 <p>Carmine Visuals Africa empowers communities and youth to tell their own conservation stories through photography, filmmaking, podcasts, and creative media.
-We document Africa’s wild spaces authentically, nurture the next generation of storytellers, and encourage young people to pursue conservation careers that support the protection of our shared natural heritage.</p>  
-</p>
-      </div>
+We document Africa’s wild spaces authentically, nurture the next generation of storytellers, and encourage young people to pursue conservation careers that support the protection of our shared natural heritage.</p></div>
       
       <section>
         <h2>Core Values</h2>
         <div class="services-grid">
-          <div class="service-card"><h3>1. Ownership of Our Stories</h3><p>We believe Africans should tell African conservation stories.
-Our work centres on authentic narrative ownership and representation.
-</p></div>
+          <div class="service-card"><h3>1. Ownership of Our Stories</h3><p>We believe Africans should tell African conservation stories.Our work centres on authentic narrative ownership and representation.</p>  </div>
           <div class="service-card"><h3>2. Conservation First</h3><p>Every story, project, and training prioritises the protection and ethical portrayal of wildlife and ecosystems.</p></div>
           <div class="service-card"><h3>3. Youth Empowerment & Future Leadership</h3><p>We invest in young people — inspiring them to become skilled storytellers and conservation leaders..</p></div>
           <div class="service-card"><h3>4. Community Inclusion</h3><p>Communities are custodians of wildlife. Their voices, knowledge, and experiences guide our storytelling.</p></div>
