@@ -382,3 +382,25 @@ footer {
 h1, h2, h3, h4 { color: var(--text-dark); margin-bottom: 12px }
 
 .contact-form { max-width: 600px; margin: 30px auto }
+.whatsapp-btn {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+background: #25D366;
+color: white;
+padding: 12px 18px;
+border-radius: 10px;
+text-decoration: none;
+font-size: 1.1em;
+font-weight: bold;
+margin-top: 20px;
+transition: 0.3s;
+}
+.whatsapp-btn:hover {
+background: #1ebe5d;
+transform: scale(1.05);
+}
+.whatsapp-icon {
+width: 24px;
+height: 24px;
+}
