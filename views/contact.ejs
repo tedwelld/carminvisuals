@@ -14,16 +14,7 @@
         <a href="/services">Services</a>
         <a href="/gallery">Gallery</a>
         <a href="/contact">Contact</a>
-        <% if (!currentUser) { %>
-          <a href="/login">🔓 Login</a>
-          <a href="/register">📝 Register</a>
-        <% } else { %>
-          <a href="/dashboard">👤 Dashboard</a>
-          <% if (currentUser.is_superuser) { %>
-            <a href="/admin">⚙️ Admin</a>
-          <% } %>
-          <a href="/logout">🚪 Logout</a>
-        <% } %>
+        <a href="/news">News</a>
       </nav>
     </header>
     <main>
