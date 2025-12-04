@@ -122,7 +122,7 @@ app.post('/register', async (req, res) => {
           auth: process.env.SMTP_USER ? { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS } : undefined
         });
         const mail = {
-          from: process.env.SMTP_FROM || 'no-reply@carminevisuals.local',
+          from: process.env.SMTP_FROM || 'zwanetedwell@outlook.com',
           to: email,
           subject: 'Activate your Carmine Visuals account',
           text: `Hello ${first_name},\n\nPlease activate your account by visiting: ${activateUrl}\n\nIf you did not register, ignore this email.\n`,
